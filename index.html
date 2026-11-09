@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>មួយថ្ងៃនៃជីវិតរបស់ខ្ញុំ</title>
+
+    <!-- Google Fonts: Kantumruy Pro (Khmer) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="game-container">
+
+        <div class="background" id="bg" aria-hidden="true">
+            <img src="images/background.png" alt="" class="bg-img">
+        </div>
+        
+        <!-- SPLASH SCREEN -->
+        <div class="splash-screen" id="splashScreen">
+            <!-- Left Side: Actor / Character -->
+            <div class="character-container">
+                <img src="images/character.png" alt="Soriya Protagonist" class="character-img">
+            </div>
+
+            <!-- Right Side: Title & Button -->
+            <div class="menu-container">
+                <div class="title-wrap">
+                    <div class="title-decor" aria-hidden="true">
+                        <svg class="decor-moon" viewBox="0 0 24 24" focusable="false">
+                            <path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+                        </svg>
+                        <svg class="decor-star decor-star--1" viewBox="0 0 24 24" focusable="false">
+                            <path fill="currentColor" d="M12 0c.62 6.4 5 10.78 12 12-7 1.22-11.38 5.6-12 12-.62-6.4-5-10.78-12-12C7 10.78 11.38 6.4 12 0Z"/>
+                        </svg>
+                        <svg class="decor-star decor-star--2" viewBox="0 0 24 24" focusable="false">
+                            <path fill="currentColor" d="M12 0c.62 6.4 5 10.78 12 12-7 1.22-11.38 5.6-12 12-.62-6.4-5-10.78-12-12C7 10.78 11.38 6.4 12 0Z"/>
+                        </svg>
+                        <svg class="decor-star decor-star--3" viewBox="0 0 24 24" focusable="false">
+                            <path fill="currentColor" d="M12 1.7l3.09 6.26 6.91.99-5 4.87 1.18 6.88L12 17.45l-6.18 3.25L7 13.82l-5-4.87 6.91-.99L12 1.7Z"/>
+                        </svg>
+                        <svg class="decor-star decor-star--4" viewBox="0 0 24 24" focusable="false">
+                            <path fill="currentColor" d="M12 0c.62 6.4 5 10.78 12 12-7 1.22-11.38 5.6-12 12-.62-6.4-5-10.78-12-12C7 10.78 11.38 6.4 12 0Z"/>
+                        </svg>
+                        <svg class="decor-star decor-star--5" viewBox="0 0 24 24" focusable="false">
+                            <path fill="currentColor" d="M12 0c.62 6.4 5 10.78 12 12-7 1.22-11.38 5.6-12 12-.62-6.4-5-10.78-12-12C7 10.78 11.38 6.4 12 0Z"/>
+                        </svg>
+                        <span class="decor-dot"></span>
+                    </div>
+
+                    <h1 class="main-title">មួយថ្ងៃនៃជីវិតរបស់ខ្ញុំ</h1>
+                </div>
+
+                <p class="sub-title">តើខ្ញុំត្រួវធ្វើអ្វីខ្លះថ្ងៃនេះ???</p>
+                <button class="start-btn" id="startBtn">ចាប់ផ្ដើម</button>
+            </div>
+        </div>
+
+        <!-- STORY VIEWER SCREEN -->
+        <div class="story-screen" id="storyScreen">
+            <div class="image-frame">
+
+                <img id="currentStoryImg"
+                    src=""
+                    alt="Story Scene"
+                    class="story-img">
+
+                <!-- Visual Novel Speech Bubble -->
+                <div class="dialogue-bubble" id="dialogueBubble">
+
+                    <div class="dialogue-header">
+                        <span id="sceneTime">11:00 PM</span>
+                        <span id="speakerName">Soriya</span>
+                    </div>
+
+                    <p id="dialogueText">
+                        Finally, she's home...
+                    </p>
+
+                </div>
+
+                <!-- Secret box call-to-action -->
+                <button class="open-box-btn" id="openBoxBtn" type="button">
+                    Open the box
+                </button>
+
+            </div>
+
+            <div class="controls">
+                <button class="nav-btn" id="prevBtn">ថយក្រោយ</button>
+                <button class="nav-btn" id="nextBtn">បន្ទាប់</button>
+            </div>
+        </div>
+
+        <!-- MUSIC TOGGLE -->
+        <button class="music-btn muted" id="musicBtn" type="button" aria-pressed="false" aria-label="បើកចម្រៀង" title="បើកចម្រៀង">
+            <svg class="music-icon music-icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 5 6 9H2v6h4l5 4V5z"></path>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+            <svg class="music-icon music-icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 5 6 9H2v6h4l5 4V5z"></path>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+            <span class="music-label">ចម្រៀង</span>
+        </button>
+
+    </div>
+
+    <audio id="bgMusic" src="music/background.mp3" loop preload="auto"></audio>
+
+    <!-- External JavaScript Files -->
+    <script src="js/story_data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/stars.js"></script>
+</body>
+</html>

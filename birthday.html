@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>រីករាយថ្ងៃកំណើត សុរិយា! ♡</title>
+    <meta name="description" content="Birthday surprise តូចមួយសម្រាប់ សុរិយា មានរូបភាព Memories និងពាក្យជូនពរពិសេសខ្លីៗ សម្រាប់ថ្ងៃពិសេសរបស់អ្នក។">
+
+    <!-- Flag JS early so scroll-reveal styles only apply when JS is available -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- Google Fonts (non-blocking so the gallery script runs immediately) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+        media="print"
+        onload="this.media='all'">
+    <noscript>
+        <!-- <link
+            href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"> -->
+            <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+    </noscript>
+
+    <!-- Birthday page styles (standalone — no story theme) -->
+    <link rel="stylesheet" href="css/birthday.css">
+</head>
+<body>
+
+    <!-- Shared story background art (same image as index.html) -->
+    <div class="page-background" aria-hidden="true">
+        <img src="images/background.png" alt="" class="page-background-img">
+    </div>
+
+    <!-- Soft reading-progress bar -->
+    <div class="scroll-progress" aria-hidden="true">
+        <span class="scroll-progress-bar" id="scrollProgressBar"></span>
+    </div>
+
+    <!-- Back to the story -->
+    <a class="back-link" href="index.html">
+        <span aria-hidden="true"></span> ត្រឡប់ក្រោយ
+    </a>
+
+    <!-- Floating music toggle -->
+    <button class="music-btn muted" id="musicBtn" type="button" aria-pressed="false" aria-label="Play music" title="Play music">
+        <svg class="music-icon music-icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 5 6 9H2v6h4l5 4V5z"></path>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+        </svg>
+        <svg class="music-icon music-icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 5 6 9H2v6h4l5 4V5z"></path>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+        <span class="music-label">ចម្រៀង</span>
+    </button>
+
+    <main class="birthday-page">
+
+        <!-- ========================================================
+             SECTION 1 — HERO
+             ======================================================== -->
+        <section class="hero-section" id="hero">
+            <div class="hero-decorations" aria-hidden="true">
+                <svg class="floating-flower flower-1" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="18" fill="#FAD2E1" />
+                    <ellipse cx="50" cy="22" rx="14" ry="20" fill="#FDE2E4" />
+                    <ellipse cx="50" cy="78" rx="14" ry="20" fill="#FDE2E4" />
+                    <ellipse cx="22" cy="50" rx="20" ry="14" fill="#FDE2E4" />
+                    <ellipse cx="78" cy="50" rx="20" ry="14" fill="#FDE2E4" />
+                    <circle cx="50" cy="50" r="10" fill="#E56B6F" opacity="0.8" />
+                </svg>
+
+                <svg class="floating-flower flower-2" viewBox="0 0 100 100" fill="none">
+                    <ellipse cx="50" cy="25" rx="12" ry="18" fill="#FFF1E6" />
+                    <ellipse cx="50" cy="75" rx="12" ry="18" fill="#FFF1E6" />
+                    <ellipse cx="25" cy="50" rx="18" ry="12" fill="#FFF1E6" />
+                    <ellipse cx="75" cy="50" rx="18" ry="12" fill="#FFF1E6" />
+                    <circle cx="50" cy="50" r="14" fill="#F4ACB7" />
+                </svg>
+
+                <svg class="floating-flower flower-3" viewBox="0 0 100 100" fill="none">
+                    <path d="M50 15 C30 15, 20 40, 50 85 C80 40, 70 15, 50 15 Z" fill="#FCE7F3" />
+                </svg>
+
+                <svg class="floating-flower flower-4" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="24" fill="#FAF0CA" opacity="0.6" />
+                    <circle cx="50" cy="50" r="12" fill="#E56B6F" opacity="0.7" />
+                </svg>
+            </div>
+
+            <div class="container hero-content">
+                <span class="hero-tag fade-in-element">A Special Day for Someone Special</span>
+                <h1 class="hero-title fade-in-element">
+                    Happy Birthday, សុរិយា!
+                    <span class="heart-accent" aria-hidden="true">♡</span>
+                </h1>
+                <div class="hero-date-badge fade-in-element">November 25, 2026</div>
+                <p class="hero-desc fade-in-element">
+                    នេះជាកាដូតូចមួយ ដែលធ្វើឡើងសម្រាប់អ្នក។ 💗
+                </p>
+                <a href="#note" class="hero-cta fade-in-element">
+                    <span>មកមើល Surprise តូចមួយនេះសិន ✨</span>
+                    <span class="arrow-down" aria-hidden="true">↓</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             SECTION 2 — A LITTLE NOTE
+             ======================================================== -->
+        <section class="note-section" id="note">
+            <div class="container">
+                <div class="scrapbook-card fade-in-element">
+                    <div class="washi-tape-top-left" aria-hidden="true"></div>
+                    <div class="washi-tape-top-right" aria-hidden="true"></div>
+
+                    <svg class="note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                    </svg>
+
+                    <span class="section-kicker">Welcome to Your Scrapbook</span>
+                    <h2 class="note-heading"> ថ្ងៃនេះគឺជាថ្ងៃពីសេសរបស់អ្នក! 💗</h2>
+                    <p class="note-text">
+                        ថ្ងៃនេះជាថ្ងៃពិសេសរបស់អ្នក 
+                        ហើយខ្ញុំគ្រាន់តែចង់បង្កើតនូវអ្វីដែលខុសប្លែកពីអ្នកដទៃ បន្តិចបន្តួចសម្រាប់អ្នក។ 
+                        ខាងក្រោមនេះគឺជាពេលវេលាតូចៗមួយចំនួនដែលខ្ញុំចង់បង្ហាញ...
+                        
+                    </p>
+                    <div class="note-signature">For Soriya Man</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             SECTION 3 — PHOTO MEMORIES (CENTER-LINE TIMELINE)
+             ======================================================== -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <header class="gallery-header fade-in-element">
+                    <span class="section-kicker">អនុស្សាវរីយ៍ &amp; ស្នាមញញឹម</span>
+                    <h2 class="section-title">រូបភាពតូចៗ តែមានអត្ថន័យធំៗ 💗</h2>
+                    <p class="section-subtitle">
+                        រូបភាពទាំងនេះ គឺជា Memories ដែលគួរឲ្យចងចាំ។
+                        ចុចលើរូបណាមួយ ដើម្បីមើលឲ្យបានច្បាស់ៗណា៎! 🫶
+                    </p>
+                </header>
+
+                <div class="timeline" id="timeline" aria-label="Photo memories timeline">
+                    <!-- Timeline items are generated by js/birthday.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             SECTION 4 — BIRTHDAY WISHES
+             ======================================================== -->
+        <section class="wishes-section" id="wishes">
+            <div class="container">
+                <header class="wishes-header fade-in-element">
+                    <span class="section-kicker">Heartfelt Wishes</span>
+                    <h2 class="section-title">មានរឿងខ្លះចង់ប្រាប់ ♡</h2>
+                    <p class="section-subtitle">
+                        សុំជូនពរឲ្យឆ្នាំថ្មីនៃជីវិតរបស់អ្នក
+                        ពោរពេញទៅដោយរឿងល្អៗ និងស្នាមញញឹមជារៀងរាល់ថ្ងៃ។ 🥰
+                    </p>
+                </header>
+
+                <div class="wishes-grid">
+                    <div class="wish-card fade-in-element">
+                        <div class="wish-icon-wrap" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </div>
+                        <blockquote class="wish-quote">"ផ្ដល់ពេលវេលាឲ្យ​ខ្លួនឯងឲ្យច្រើនៗ ធ្វើអ្វីដែលធ្វើអោយខ្លួនឯងសប្បាយចិត្ត។​​​​"</blockquote>
+                        <div class="wish-footer-flower" aria-hidden="true">🌸 🌸 🌸</div>
+                    </div>
+
+                    <div class="wish-card fade-in-element">
+                        <div class="wish-icon-wrap" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                            </svg>
+                        </div>
+                        <blockquote class="wish-quote">"ញញឹមឲ្យបានច្រើនៗណា៎ ហើយកុំភ្លេចធ្វើជាខ្លួនឯងដែលគួរឲ្យស្រលាញ់។"</blockquote>
+                        <div class="wish-footer-flower" aria-hidden="true">🌷 🌷 🌷</div>
+                    </div>
+
+                    <div class="wish-card fade-in-element">
+                        <div class="wish-icon-wrap" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <blockquote class="wish-quote">"សូមឲ្យអ្វីៗដែលអ្នកស្រមៃ និងកំពុងខិតខំប្រឹងប្រែង សម្រេចបានដូចបំណង។"</blockquote>
+                        <div class="wish-footer-flower" aria-hidden="true">✨ ✨ ✨</div>
+                    </div>
+
+                    <div class="wish-card fade-in-element">
+                        <div class="wish-icon-wrap" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </div>
+                        <blockquote class="wish-quote">"សង្ឃឹមថាអ្នកនិងមានហេតុផលច្រើន អាចធ្វើអោយខ្លួនឯង បានញញឹមរាល់ថ្ងៃ។"</blockquote>
+                        <div class="wish-footer-flower" aria-hidden="true">💖 💖 💖</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             SECTION 5 — A LETTER FOR YOU
+             ======================================================== -->
+        <section class="letter-section" id="letter">
+            <div class="container">
+                <header class="letter-header fade-in-element">
+                    <span class="section-kicker">សម្រាប់តែអ្នកប៉ុណ្ណោះ</span>
+                    <h2 class="section-title">មានសំបុត្រមួយចង់ផ្ញើឲ្យអ្នក</h2>
+                    <p class="section-subtitle">
+                        បើមានពេលទំនេរ សាកបើកអានមើលណា៎។ មានរឿងខ្លះចង់ប្រាប់។ ♡
+                    </p>
+                </header>
+
+                <div class="envelope-container fade-in-element">
+                    <button id="openEnvelopeBtn" class="envelope-trigger-btn" type="button" aria-expanded="false" aria-controls="revealedLetter">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span class="envelope-btn-text">បើកសំបុត្រ ♡</span>
+                        <span class="envelope-chevron" aria-hidden="true"></span>
+                    </button>
+
+                    <div id="revealedLetter" class="revealed-letter" role="region" aria-label="Personalized letter" aria-hidden="true">
+                        <div class="letter-paper">
+                            <h4 class="letter-greeting">
+                                Dear សុរិយា, 💗
+                            </h4>
+
+                            <p>
+                                Happy Birthday ណា៎ Bro 🥳
+                                ស្ងាត់ៗអាយុកើនឡើងមួយឆ្នាំទៀតហើយ។
+                                សង្ឃឹមថាឆ្នាំថ្មីនេះ នឹងមានរឿងល្អៗ
+                                ឱកាសថ្មីៗ និងស្នាមញញឹមជាច្រើនចូលក្នុងជីវិត។
+                            </p>
+
+                            <p>
+                                ដឹងទេ? ជីវិតពេលខ្លះវារវល់ខ្លាំងមែនទែន។
+                                មានការងារ មានការសិក្សា មានរឿងដែលត្រូវគិតច្រើន
+                                ហើយពេលខ្លះក៏ហត់រហូតដល់មិនដឹងថាត្រូវប្រាប់អ្នកណា ចាប់ផ្ដើមពីណា។
+                            </p>
+
+                            <p>
+                                តែសូមកុំភ្លេចផ្ដល់ពេលវេលាឲ្យខ្លួនឯងផងណា៎។
+                                កុំតឹងតែងជាមួយខ្លួនឯងពេក។
+                                បើហត់ សម្រាកសិនទៅ។ អ្នកជាមនុស្សខ្លាំងស្រាប់ហើយ តែមិនចាំបាច់ខ្លាំងគ្រប់ពេលទេ។
+                                អ្នកក៏សមនឹងទទួលបានការសម្រាក ការយកចិត្តទុកដាក់បន្តិចបន្តួច ពីអ្នកជុំវិញខ្លួន និងក្ដីសុខដូចគ្នាដែរ។ 🥺
+                            </p>
+
+                            <p>
+                                សូមឲ្យអ្នកមានសុខភាពល្អ ជួបតែមនុស្សល្អៗ
+                                ហើយអ្វីដែលអ្នកកំពុងខិតខំប្រឹងប្រែង
+                                សូមឲ្យវាសម្រេចបានដូចក្ដីប្រាថ្នា។
+                                កុំបោះបង់ក្តីស្រមៃរបស់ខ្លួនឯងណា៎។
+                            </p>
+
+                            <p>
+                                Keep going, keep smiling, and never forget to love yourself.
+                                You deserve happiness too. ❤️
+                            </p>
+
+                            <p>
+                                មុននឹងបញ្ចប់ Surprise តូចមួយនេះ...
+                                គ្រាន់តែចង់ប្រាប់ថា កុំឧស្សាហ៍ធ្វើមុខសេដពេក ញញឹមអោយបានច្រើនៗ
+                                និងមានរឿងល្អៗកើតឡើងក្នុងជីវិតជារៀងរាល់ថ្ងៃ។​ ជាចុងក្រោយ ក៏សូមជូនពរអោយជួបតែពុទ្ធពរព្រះទាំង៤ប្រការ​គឺ៖ អាយុ វណ្ណៈ សុខៈ ពលៈ! កុំបីឃ្លាងឃ្លាតឡើយ។
+                            </p>
+
+                            <p>
+                            Enjoy your special day! ❤️❤️❤️
+                            </p>
+
+                            <div class="letter-closing">
+                                Happy Birthday once again! ♡
+                                <br>
+                                From: Vathana Yem,
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             SECTION 6 — CLOSING SURPRISE
+             ======================================================== -->
+        <section class="surprise-section" id="surprise">
+            <div class="container surprise-wrapper">
+                <div class="illustrated-rose-container fade-in-element">
+                    <svg class="animated-rose-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated blooming rose">
+                        <path d="M50 55 Q48 75 52 92" stroke="#588157" stroke-width="3" stroke-linecap="round" />
+                        <path d="M49 70 Q35 68 30 74 Q38 80 49 75" fill="#6B9080" />
+                        <path d="M51 64 Q65 60 70 66 Q62 74 51 69" fill="#6B9080" />
+                        <path d="M50 22 C32 18 25 36 34 46 C42 54 58 54 66 46 C75 36 68 18 50 22 Z" fill="#FAD2E1" />
+                        <path d="M50 26 C38 24 34 38 40 45 C46 50 54 50 60 45 C66 38 62 24 50 26 Z" fill="#F4ACB7" />
+                        <path d="M50 30 C44 28 42 38 46 42 C48 45 52 45 54 42 C58 38 56 28 50 30 Z" fill="#E56B6F" />
+                        <path d="M48 35 C46 36 49 39 52 38 C54 37 53 35 50 35" stroke="#FFF" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <span class="section-kicker fade-in-element">A Special Closing Note</span>
+                <h2 class="surprise-title fade-in-element">ជាថ្មីម្តងទៀត រីករាយថ្ងៃកំណើត, សុរិយា! 🌷</h2>
+                <p class="surprise-message fade-in-element">
+                    សង្ឃឹមថាថ្ងៃកំណើតឆ្នាំនេះ នឹងធ្វើឲ្យអ្នកញញឹមបានច្រើនៗ។
+                    សូមឲ្យមានក្ដីសុខ សំណាងល្អ និងរឿងល្អៗចូលមកក្នុងជីវិត។
+                    កុំភ្លេចស្រលាញ់ និងថែរក្សាខ្លួនឯងឲ្យបានល្អផងណា៎។ 🥳💗🌷
+                </p>
+
+                <div class="birthday-card-envelope fade-in-element">
+                    <div class="card-wax-seal" aria-hidden="true">SM</div>
+                    <h3 class="card-seal-text">Soriya Man's 2026 Birthday Collection</h3>
+                    <p class="card-seal-sub">November 25, 2026 · Celebrated with love and care</p>
+                </div>
+
+                <div class="fade-in-element">
+                    <button id="celebrateBtn" class="celebrate-btn" type="button">
+                        <span>មកអបអរថ្ងៃពិសេសនេះជាមួយគ្នា! ♡</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p>បង្កើតឡើងជាពិសេសសម្រាប់ <strong>អ្នក</strong> · ថ្ងៃទី ២៥ ខែវិច្ឆិកា ឆ្នាំ ២០២៦</p>
+            <p class="footer-sub">Designed as a digital birthday scrapbook with <span class="footer-love">♡</span></p>
+        </footer>
+
+    </main>
+
+    <!-- ========================================================
+         LIGHTBOX
+         ======================================================== -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer" aria-hidden="true">
+        <button id="lightboxClose" class="lightbox-close-btn" type="button" aria-label="Close media viewer (Escape)">&times;</button>
+        <button id="lightboxPrev" class="lightbox-nav-btn lightbox-nav-prev" type="button" aria-label="Previous item (Left arrow)">&#8249;</button>
+        <button id="lightboxNext" class="lightbox-nav-btn lightbox-nav-next" type="button" aria-label="Next item (Right arrow)">&#8250;</button>
+
+        <div class="lightbox-dialog">
+            <div class="lightbox-image-container">
+                <img id="lightboxImg" class="lightbox-img" src="" alt="">
+                <video id="lightboxVideo" class="lightbox-video" controls playsinline preload="metadata" hidden></video>
+            </div>
+            <div class="lightbox-caption-bar">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxDesc" class="lightbox-desc"></p>
+                <span id="lightboxCounter" class="lightbox-counter"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Celebration toast -->
+    <div id="celebrationToast" class="celebration-toast" role="status" aria-live="polite">
+        <span aria-hidden="true">🎉</span>
+        <span>Happy Birthday, សុរិយា! ជូនពរឲ្យជួបតែរឿងល្អៗ ក្នុងជីវិត! កុំភ្លេចត្រូវញញឹមអោយច្រើនៗ! 🫶 ✨</span>
+    </div>
+
+    <!-- Falling flower petals + hearts -->
+    <canvas id="petalsCanvas" class="petals-canvas" aria-hidden="true"></canvas>
+
+    <!-- Confetti canvas -->
+    <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="back-to-top-btn" type="button" aria-label="Back to top" title="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
+
+    <audio id="bgMusic" src="music/birthday.mp3" loop preload="auto"></audio>
+
+    <script src="js/birthday.js"></script>
+</body>
+</html>
